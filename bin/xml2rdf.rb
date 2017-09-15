@@ -87,7 +87,6 @@ file = ARGV[0]
 #file = "../sample/mw/MW_EBEYE_1.xml"
 ##file = "../sample/atlas/PeptideAtlas_EBEYE_1.xml"
 #file = "../sample/pride/PRIDE_EBEYE_14.xml"
-file = "/Volumes/orenostorage2/omicsDIrdf/curated-files/atlas/PeptideAtlas_EBEYE_3.xml"
 
 
 f    = File.open(file)
@@ -154,7 +153,6 @@ doc.elements.each("database/entries/entry") do |entry|
       end
     end
     
-    p id
     dbNames[dbname].each do |url|
       g << [refType, skos.exactMatch, RDF::URI("#{url}#{rid}")] if url
     end
